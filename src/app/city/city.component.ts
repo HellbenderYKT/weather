@@ -7,8 +7,6 @@ import { City } from '../home-page/home-page.component';
   styleUrls: ['./city.component.scss'],
 })
 export class CityComponent implements OnInit {
-  // _city: string;
-
   constructor() {}
 
   ngOnInit(): void {}
@@ -24,15 +22,6 @@ export class CityComponent implements OnInit {
 
   @Input()
   data: City;
-
-  // @Input()
-  // set city(a: string) {
-  //   this._city = a;
-  // }
-
-  // get city() {
-  //   return this._city;
-  // }
 
   onDelete() {
     this.delete.emit(this.index);
