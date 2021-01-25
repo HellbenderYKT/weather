@@ -1,0 +1,31 @@
+<div *ngIf="isLoading">Загрузка...</div>
+<main *ngIf="!isLoading" class="main">
+  <h1>
+    Температура города<br />
+    {{ city }},<br />
+    на 5 дней.
+  </h1>
+  <div class="show-weather">
+    <table>
+      <tr>
+        <th>Дата и время</th>
+        <th>Погода</th>
+        <th>Ветер</th>
+      </tr>
+      <tr *ngFor="let item of list">
+        <td>{{ item.dt_txt | date: "dd.MM.yy, HH:mm" }}</td>
+        <td>
+          <img
+            class="icon"
+            src="http://openweathermap.org/img/wn/{{
+              item.weather[0].icon
+            }}@2x.png"
+          />
+          <span class="description">{{ item.weather[0].description }}</span
+          >, {{ item.main.temp.toFixed() }}&#176;C
+        </td>
+        <td>{{ item.wind.speed }} м/с</td>
+      </tr>
+    </table>
+  </div>
+</main>

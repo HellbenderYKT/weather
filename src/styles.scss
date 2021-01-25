@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --grey: #f1f1f1;
+  --grey-table: #b6b6b6;
+  --grey-shadow: #b5b5b5;
+  --blue: #6675fe;
+  --blue-hover: #7a86f3;
+  --blue-active: #5562d4;
+  --red: #f74949;
+  --red-hover: #f36a6a;
+  --red-active: #f52d2d;
+  --green: #03bd03;
+  --green-hover: #03d603;
+  --green-active: #089b08;
+  --limon: #fffab3;
+}

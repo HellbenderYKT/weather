@@ -1,0 +1,56 @@
+<div
+  class="content"
+  [ngClass]="{
+    blue: textColor === 'blue',
+    red: textColor === 'red',
+    green: textColor === 'green'
+  }"
+>
+  <h1 class="title">Погода по всему миру</h1>
+  <div class="form">
+    <!-- <input
+      #myInput
+      class="input"
+      [value]="city"
+      (input)="handleChange(myInput.value)"
+      placeholder="Напишите город"
+      type="text"
+    /> -->
+    <input
+      type="text"
+      class="input"
+      [(ngModel)]="city"
+      placeholder="Напишите город"
+    />
+    <button (click)="handleClick()" class="button">Показать погоду</button>
+  </div>
+  <div class="buttons">
+    <button class="button-default" (click)="textColor = 'default'">
+      default
+    </button>
+    <button class="button-blue" (click)="textColor = 'blue'">set blue</button>
+    <button class="button-red" (click)="textColor = 'red'">set red</button>
+    <button class="button-green" (click)="textColor = 'green'">
+      set green
+    </button>
+    <button class="changetInput" (click)="city = 'Yakutsk'">Yakutsk</button>
+  </div>
+  <div *ngIf="list.length > 1" class="sort">
+    <button (click)="handleSort()">Сортировать</button>
+  </div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngFor="let item of list; index as i" class="show-weather">
+    <app-city
+      #andrey
+      [data]="item"
+      [index]="i"
+      (delete)="handleDelete($event)"
+      (refresh)="handleRefresh($event)"
+    ></app-city>
+    <button (click)="andrey.onDelete()">Удалить внешне</button>
+    <app-notification *ngIf="notification">
+      <div>{{ notification }}</div>
+      <div (click)="andrey.onDelete()">удалить</div>
+    </app-notification>
+  </div>
+</div>

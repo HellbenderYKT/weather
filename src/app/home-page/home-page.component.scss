@@ -1,0 +1,209 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .content {
+    overflow: auto;
+    max-height: 100%;
+    padding: 48px;
+    border-radius: 16px;
+    border: 1px solid var(--grey);
+    width: 600px;
+    box-shadow: inset 1px 1px 24px var(--grey-shadow);
+  
+    &.default {
+      color: #000;
+      box-shadow: inset 1px 1px 24px #000;
+    }
+    &.blue {
+      color: var(--blue);
+      box-shadow: inset 1px 1px 24px var(--blue-hover);
+    }
+    &.red {
+      color: var(--red);
+      box-shadow: inset 1px 1px 24px var(--red-hover);
+    }
+    &.green {
+      color: var(--green);
+      box-shadow: inset 1px 1px 24px var(--green-hover);
+    }
+  
+    .title {
+      margin: 0 0 24px;
+      padding: 0;
+    }
+  
+    .form {
+      display: flex;
+    }
+  
+    .input {
+      height: 50px;
+      border: none;
+      background-color: var(--grey);
+      border-radius: 8px;
+      padding: 0 16px;
+      flex-grow: 1;
+      font-size: 16px;
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+      }
+    }
+  
+    .button {
+      height: 50px;
+      border-radius: 8px;
+      margin-left: 16px;
+      background-color: var(--blue);
+      color: white;
+      box-shadow: none;
+      border: none;
+      padding: 0 32px;
+      cursor: pointer;
+      font-size: 16px;
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+      }
+  
+      &:hover {
+        background-color: var(--blue-hover);
+      }
+  
+      &:active {
+        background-color: var(--blue-active);
+      }
+    }
+  
+    .button-default,
+    .button-blue,
+    .button-green,
+    .button-red,
+    .changetInput,
+    .sort > button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+    }
+  
+    .buttons > button {
+      margin: 4px 4px 0 0;
+    }
+  
+    .button-default {
+      color: #000;
+      background-color: rgb(255, 254, 254);
+      box-shadow: inset 0 0 10px 0 rgb(173, 173, 173);
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+        box-shadow: inset 0 0 15px 0 rgb(150, 150, 150);
+      }
+  
+      &:hover {
+        background-color: rgb(255, 255, 255);
+        box-shadow: inset 0 0 20px 0 rgb(198, 198, 198);
+      }
+  
+      &:active {
+        background-color: rgb(255, 255, 255);
+        box-shadow: inset 0 0 10px 0 rgb(133, 133, 133);
+      }
+    }
+  
+    .button-blue {
+      color: #fff;
+      background-color: var(--blue);
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+      }
+  
+      &:hover {
+        background-color: var(--blue-hover);
+      }
+  
+      &:active {
+        background-color: var(--blue-active);
+      }
+    }
+  
+    .button-red {
+      color: #fff;
+      background-color: var(--red);
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+      }
+  
+      &:hover {
+        background-color: var(--red-hover);
+      }
+  
+      &:active {
+        background-color: var(--red-active);
+      }
+    }
+  
+    .button-green {
+      color: #fff;
+      background-color: var(--green);
+  
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--blue);
+      }
+  
+      &:hover {
+        background-color: var(--green-hover);
+      }
+  
+      &:active {
+        background-color: var(--green-active);
+      }
+    }
+  
+    .sort {
+      align-self: center;
+      padding-top: 4px;
+  
+      button {
+        color: #fff;
+        background-color: var(--red);
+  
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 2px var(--blue);
+        }
+  
+        &:hover {
+          background-color: var(--red-hover);
+        }
+  
+        &:active {
+          background-color: var(--red-active);
+        }
+      }
+    }
+  
+    .error {
+      color: var(--red);
+      padding: 16px 0;
+    }
+  }
+  
+  .show-weather {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  

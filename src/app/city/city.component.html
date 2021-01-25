@@ -1,0 +1,32 @@
+<div class="item">
+  <div class="date">
+    <span>
+      {{ data.date | date: "HH:mm" }}
+    </span>
+    <br />
+    {{ data.date | date: "dd.MM.yy" }}
+  </div>
+  <div>
+    <a
+      class="city"
+      [routerLink]="'/weather'"
+      [queryParams]="{ city: data.name }"
+      >{{ data.name }}</a
+    >
+    <div class="temp">
+      Температура: {{ data.temp.toFixed() }}&#176;C
+    </div>
+  </div>
+  <img
+    class="icon"
+    src="http://openweathermap.org/img/wn/{{ data.icon }}@2x.png"
+  />
+</div>
+<div class="controls">
+  <div class="refresh-city">
+    <button (click)="onRefresh()">Обновить</button>
+  </div>
+  <div class="delete-city">
+    <button (click)="onDelete()">Удалить</button>
+  </div>
+</div>

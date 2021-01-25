@@ -1,0 +1,89 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+
+  .date {
+    margin-right: 32px;
+    span {
+      font-size: 22px;
+    }
+  }
+
+  a:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .icon {
+    width: 47px;
+    margin-left: 16px;
+  }
+
+  .city {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.controls {
+  display: flex;
+}
+
+.refresh-city {
+  align-self: center;
+  padding-right: 8px;
+
+  button {
+    color: #fff;
+    background-color: var(--blue);
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    &:hover {
+      background-color: var(--blue-hover);
+    }
+
+    &:active {
+      background-color: var(--blue-active);
+    }
+  }
+}
+
+.delete-city {
+  align-self: center;
+
+  button {
+    color: #fff;
+    background-color: var(--red);
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    &:hover {
+      background-color: var(--red-hover);
+    }
+
+    &:active {
+      background-color: var(--red-active);
+    }
+  }
+}
+
+.refresh-city > button,
+.delete-city > button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+}
