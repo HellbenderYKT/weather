@@ -59,15 +59,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   textColor: string;
 
-  constructor(private httpClient: HttpClient) {
-    console.log('constr');
-  }
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
 
-  ngOnDestroy() {
-    console.log('destroy');
-  }
+  ngOnDestroy() {}
 
   handleClick() {
     const alreadyExist = this.list.some((item) => {
@@ -95,7 +91,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
           date: new Date(),
         });
         this.city = '';
-        this.notification = 'Новый город добавлен'
+        this.notification = 'Новый город добавлен';
         setTimeout(() => {
           this.notification = '';
         }, 5000);
@@ -120,13 +116,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   handleDelete(i: number) {
-    // this.temp = undefined;
     this.list.splice(i, 1);
-    // console.log(i);
   }
 
   handleRefresh(item: City) {
-    console.log(item);
     this.httpClient
       .get<Response>(
         `${API_URL}/weather?q=${item.name}&appid=${MY_KEY}&units=metric`
@@ -138,19 +131,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
       });
   }
 
-  // handleChange(value: string) {
-  //   // const value = event.target.value
-  //   // this.city = (<HTMLInputElement>event.target).value;
-  //   this.city = value;
-  // }
-
   changetInput() {
     this.city = 'Morokko';
   }
 }
-
-// не добовлять дублирующий город
-// показывать ошибку какой город не найден
-// очищать инпут после добавления города
-// добавить кнопку обновить погоду для города
-//
