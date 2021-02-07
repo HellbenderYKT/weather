@@ -51,13 +51,13 @@ export class Response {
 export class HomePageComponent implements OnInit, OnDestroy {
   notification: string;
 
-  city: string = 'London';
+  city: string = 'Лондон';
 
   list: City[] = [];
 
   error?: string;
 
-  textColor: string;
+  textColor: string = 'default';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -71,11 +71,12 @@ export class HomePageComponent implements OnInit, OnDestroy {
     });
     if (alreadyExist) {
       this.error = 'Такой город уже добавлен';
+      this.city = '';
       return;
     }
     this.httpClient
       .get<Response>(
-        `${API_URL}/weather?q=${this.city}&appid=${MY_KEY}&units=metric`
+        `${API_URL}/weather?q=${this.city}&appid=${MY_KEY}&units=metric&lang=ru`
       )
       .pipe(catchError(this.handleError))
       .pipe(filter((response) => !(response instanceof HttpErrorResponse)))

@@ -3,7 +3,8 @@
   [ngClass]="{
     blue: textColor === 'blue',
     red: textColor === 'red',
-    green: textColor === 'green'
+    green: textColor === 'green',
+    default: textColor === 'default'
   }"
 >
   <h1 class="title">Погода по всему миру</h1>
@@ -24,8 +25,12 @@
     <button class="button-red" (click)="textColor = 'red'">set red</button>
     <button class="button-green" (click)="textColor = 'green'">
       set green
-    </button>
-    <button class="changetInput" (click)="city = 'Yakutsk'">Yakutsk</button>
+    </button><br><hr>
+    <button class="changetInput" (click)="city = 'Якутск'">Якутск</button>
+    <button class="changetInput" (click)="changetInput()">Морокко</button>
+    <button class="changetInput" (click)="city = 'Париж'">Париж</button>
+    <button class="changetInput" (click)="city = 'Лондон'">Лондон</button>
+    <button class="changetInput" (click)="city = 'Москва'">Москва</button>
   </div>
   <div *ngIf="list.length > 1" class="sort">
     <button (click)="handleSort()">Сортировать</button>
